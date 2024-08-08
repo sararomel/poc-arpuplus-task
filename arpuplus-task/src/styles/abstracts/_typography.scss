@@ -1,0 +1,96 @@
+@use 'sass:map';
+@import '../abstracts/functions';
+
+$_fonts: (
+  'display-en': '"poppins-display-en", serif',
+  'display-ar': '"poppins-display-ar", sans-serif',
+
+  'headline-en': '"poppins-headline-en", sans-serif',
+  'headline-ar': '"poppins-headling-ar", sans-serif',
+
+  'title-en': '"poppins-title-en", sans-serif',
+  'title-ar': '"poppins-title-ar", sans-serif',
+
+  'body-en': '"poppins-body-en", sans-serif',
+  'body-ar': '"poppins-bofy-ar", sans-serif',
+
+  'label-en': '"poppins-label-en", sans-serif',
+  'label-ar': '"poppins-label-ar", sans-serif',
+
+  'placeholder-en': '"placeholder-ar", sans-serif',
+  'placeholder-ar': '"placeholder-ar", sans-serif',
+);
+
+// Those variables are calculated and added in app.component based on current language
+$fonts: (
+  'display': var(--font-display),
+  'headline': var(--font-headline),
+  'title': var(--font-title),
+  'body': var(--font-body),
+  'label': var(--font-label),
+  'placeholder': var(--font-placeholder),
+);
+
+// -------------------------------
+// src/styles/fonts.scss
+
+@font-face {
+  font-family: 'poppins-display-en';
+  src: url('../../assets/fonts/Poppins-Black.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'poppins-headline-en';
+  src: url('../../assets/fonts/Poppins-Bold.ttf') format('truetype');
+}
+
+@font-face {
+  font-family: 'poppins-title-en';
+  src: url('../../assets/fonts/Poppins-Regular.ttf') format('truetype');
+}
+
+
+// Define other fonts similarly
+
+$fw-light: 300;
+$fw-regular: 400;
+$fw-medium: 500;
+$fw-semiBold: 600;
+$fw-bold: 700;
+
+@function font($font) {
+  @if not map.has-key($fonts, $font) {
+    @error ('Font #{$font} Not Found!! ');
+  }
+
+  @return map.get($fonts, $font);
+}
+
+@mixin font($font, $size, $weight: $fw-regular, $important: false) {
+  @if $important ==false {
+    font-family: font($font);
+  }
+
+  @if $important ==true {
+    font-family: font($font) !important;
+  }
+
+  font-size: #{toRem($size)};
+  font-weight: $weight;
+}
+
+// The underscore as the name clash with Bootstrap font-sizes map
+$_font-sizes: (
+);
+
+@for $i from 12 through 50 {
+  $_font-sizes: map.set($_font-sizes, '#{$i}', toRem($i));
+}
+
+@function fs($size) {
+  @if not map.has-key($_font-sizes, $size) {
+    @error ('Size #{$size} Not Found!! ');
+  }
+
+  @return map.get($_font-sizes, $size);
+}

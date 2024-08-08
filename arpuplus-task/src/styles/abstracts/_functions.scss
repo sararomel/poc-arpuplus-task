@@ -1,0 +1,39 @@
+@use 'sass:math';
+
+@function toRem($value) {
+  $divisor: 0;
+  @if (math.is-unitless($value)) {
+    $divisor: 16;
+  }
+  @if (math.unit($value) == 'px') {
+    $divisor: 16px;
+  }
+  @if ($divisor == 0) {
+    @error "Value #{$value} must be in px.";
+  }
+  @return math.div($value, $divisor) * 1rem;
+}
+
+@function round-to($number, $decimal) {
+  $multiplier: math.pow(10, $decimal);
+
+  // Round the number to the nearest integer
+  $rounded: round($number * $multiplier);
+
+  // Divide the rounded number by the multiplier to get the result with two decimal places
+  @return math.div($rounded, $multiplier);
+}
+
+@function toVw($value) {
+  $div: 0;
+  @if (math.is-unitless($value)) {
+    $div: 1477;
+  }
+  @if (math.unit($value) == 'px') {
+    $div: 1477px;
+  }
+  @if ($div == 0) {
+    @error "Value #{$value} must be in px.";
+  }
+  @return round-to(math.div($value, $div) * 100, 2) * 1vw;
+}

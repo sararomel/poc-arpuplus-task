@@ -1,0 +1,38 @@
+@import 'abstracts';
+// Custom utilities
+// or Override default utilities
+$utilities: (
+  map-merge(
+    $utilities,
+    (
+      'width':
+        map-merge(
+          map-get($utilities, 'width'),
+          (
+            responsive: true,
+          )
+        ),
+      'font': (
+        property: font-family,
+        responsive: true,
+        values: $fonts,
+        class: font,
+      ),
+      'fs': (
+        responsive: true,
+        property: font-size,
+        values: $_font-sizes,
+        class: fs,
+      ),
+      'color': (
+        property: color,
+        values: $colors,
+      ),
+      'bg-color': (
+        property: background-color,
+        values: $colors,
+        class: bg-color,
+      ),
+    )
+  )
+);

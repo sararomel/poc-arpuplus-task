@@ -1,0 +1,17 @@
+@use 'sass:map';
+
+$colors: (
+  'primary': #1A019D,
+  'secondary': #bfac8c,
+  'black': #000,
+  'white': #f5f5f5,
+  'bg': color('secondary'),
+  'red': #a42424,
+);
+
+@function color($color) {
+  @if not map.has-key($colors, $color) {
+    @error ('Color #{$color} Not Found!! ');
+  }
+  @return map.get($colors, $color);
+}

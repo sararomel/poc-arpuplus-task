@@ -1,0 +1,24 @@
+<div class="pagination">
+  <button
+    class="pagination__btn pagination__btn--prev"
+    (click)="onPrev()"
+    [disabled]="!prev"
+  >
+    {{ "\<" }}
+  </button>
+  <a
+    class="pagination__number"
+    *ngFor="let number of paginationNumbers; let i = index"
+    (click)="numberClick(number)"
+    [ngClass]="{ 'pagination__number--active': currentPage === number }"
+  >
+    {{ number }}
+  </a>
+  <button
+    class="pagination__btn pagination__btn--next"
+    (click)="onNext()"
+    [disabled]="!next"
+  >
+    {{ ">" }}
+  </button>
+</div>

@@ -1,0 +1,26 @@
+<div class="menu">
+  <div class="menu__button-container">
+    <button (click)="openMobileMenu()" class="menu__button">
+      <div class="menu__icon" #icon>&nbsp;</div>
+    </button>
+  </div>
+
+  @if (showMenu) {
+  <div class="menu__content" @menu>
+    <ul class="menu__navs">
+      @for (nav of navs; track nav.name) {
+      <li class="menu__nav-item" (click)="closeMobileMenu()">
+        <a class="menu__nav-link" [routerLink]="nav.url">
+          {{ nav.name | translate }}
+        </a>
+      </li>
+      }
+      <li class="menu__nav-item">
+        <a class="menu__nav-link" (click)="onChangeLang()">
+          {{ 'MENU.LANG' | translate }}
+        </a>
+      </li>
+    </ul>
+  </div>
+  }
+</div>

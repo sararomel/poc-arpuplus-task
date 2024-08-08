@@ -1,0 +1,16 @@
+<div class="navigation">
+  <a
+    class="navigation__item"
+    [routerLink]="home.url"
+    [ngClass]="{ 'navigation__item--active': navs.length === 0 }"
+    >{{ home.name | translate }}</a
+  >
+
+  <a
+    *ngFor="let nav of navs; index as i"
+    [routerLink]="nav.url"
+    class="navigation__item"
+    [ngClass]="{ 'navigation__item--active': i === navs.length - 1 }"
+    >{{ nav.name | translate }}</a
+  >
+</div>

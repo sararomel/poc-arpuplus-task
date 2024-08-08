@@ -1,0 +1,22 @@
+{
+  "BTN": {
+    "SEND": "SEND",
+    "ALL": "ALL",
+    "DISCOVER_ALL": "DISCOVER ALL",
+    "CONTACT_US": "Contact Us",
+    "KNOW_MORE": "Know More",
+    "SEE_MORE": "See More",
+    "BACK_TO_HOME": "Back to Home",
+    "VIEW_PROJECT": "View Project"
+  },
+  "ERRORS": {
+    "404": "Page Not Found",
+    "404_TEXT": "Something went wrong",
+    "500": "Internal Server Error",
+    "500_TEXT": "Something went wrong, please try again later"
+  },
+  "MORE_PROJECTS": "More Projects",
+  "Home":{
+    "Welcome":"Welcome To Our Website if you need to chat click on chat Button"
+  }
+}

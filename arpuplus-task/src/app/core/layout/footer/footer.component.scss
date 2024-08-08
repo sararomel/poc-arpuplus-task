@@ -1,0 +1,90 @@
+@import 'abstracts';
+
+:host {
+  display: block;
+  width: 100%;
+}
+
+.footer {
+  color: color('white');
+
+  &__left-right {
+    text-align: center;
+    padding: 0.3rem;
+
+    &__left {
+      border-top-right-radius: 1000px;
+      background-color: color('primary');
+      width: 100%;
+      height: 100%;
+      cursor: pointer;
+
+      span {
+        // last use like this
+        // font-size: 12px;
+        // font-weight: 500;
+        // font-family: 'poppins'
+        // BUT THE NEW IS
+        @include font('headline', 12px, $fw-bold);
+      }
+
+      @media (max-width: 768px) {
+        border-top-right-radius: 0;
+      }
+    }
+
+    &__right {
+      border-top-left-radius: 1000px;
+      background-color: color('primary');
+      width: 100%;
+      height: 100%;
+
+      li {
+        @include font('headline', 12px, $fw-bold);
+        cursor: pointer;
+      }
+
+      @media (max-width: 768px) {
+        border-top-left-radius: 0;
+      }
+    }
+  }
+
+  &__description-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+  }
+
+  &__description {
+    width: 100%;
+    height: 100%;
+    background-color: color('white');
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: 0;
+
+    @media (max-width: 768px) {
+      border-radius: 20px;
+      width: 70%;
+      padding: 0.5rem;
+    }
+  }
+
+  &__nav-link {
+    text-transform: uppercase;
+  }
+
+  &__social-link {
+    text-transform: uppercase;
+    padding-inline-end: 1rem;
+  }
+
+  @media (max-width: 768px) {
+    background-color: color('primary');
+    padding: 1rem ;
+  }
+}

@@ -1,0 +1,114 @@
+.header-left {
+  width: 100%;
+
+  .user-info {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: #e1dcff;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 100%;
+    img {
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    .name {
+      font-family: Poppins;
+      font-size: 12px;
+      font-weight: 500;
+      color: #090037;
+    }
+    .role {
+      font-family: Poppins;
+      font-size: 10px;
+      font-weight: 500;
+      color: #2101c4;
+    }
+  }
+  .icons {
+    display: flex;
+    margin: 0.5rem 0;
+    justify-content: end;
+    width: 100%;
+    mat-icon {
+      color: #c3c3c3;
+    }
+    .icon {
+      background-color: #f0f0f0;
+      border-radius: 5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.2rem;
+      margin-left: 1rem;
+      cursor: pointer;
+      &:hover {
+        .delete {
+          color: red;
+        }
+      }
+    }
+
+    .search-header {
+      padding: 3px;
+      background-color: #f0f0f0;
+      border-radius: 5px;
+
+      .search-container {
+        display: flex;
+        align-items: center;
+        background-color: #f0f0f0;
+
+        input {
+          flex: 1;
+          padding: 5px;
+          border: none;
+          background-color: #f0f0f0;
+        }
+
+        .search-icon {
+          margin-left: 5px;
+        }
+      }
+    }
+  }
+  border-bottom: 1px solid #ddd;
+  .nav-tabs {
+    display: flex;
+
+    a {
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      text-decoration: none;
+      color: inherit;
+      position: relative;
+      font-size: 13px;
+
+      &.active {
+        font-weight: bold;
+        border-bottom: 1px solid #2101c4;
+      }
+
+      .icon-container {
+        position: relative;
+
+        .notification-badge {
+          position: absolute;
+          top: -7px;
+          right: -5px;
+          background: #2101c4;
+          color: white;
+          border-radius: 50%;
+          padding: 2px 6px;
+          font-size: 7px;
+          z-index: 11;
+        }
+      }
+    }
+  }
+}

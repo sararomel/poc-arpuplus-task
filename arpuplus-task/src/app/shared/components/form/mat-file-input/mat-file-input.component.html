@@ -1,0 +1,14 @@
+<div role="group" class="file" [formGroup]="fileForm">
+  <input
+    #file
+    (change)="handleFileInput($any($event.target).files)"
+    accept=".pdf, .doc, .docx"
+    class="file__file-input"
+    [formControlName]="formControlName"
+    type="file"
+    [id]="id"
+  />
+  <label (click)="file.click()" class="file__file-name" disabled type="text"
+    >{{ file.value.split('\\').at(-1) || 'Please Choose a file' }}</label
+  >
+</div>

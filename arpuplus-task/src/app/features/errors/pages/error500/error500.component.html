@@ -1,0 +1,26 @@
+<div class="error app-container">
+  <div class="d-flex flex-column justify-content-center h-100">
+    <div class="row">
+      <div class="col-12 col-md-6 order-1 order-md-0">
+        <div class="error__content">
+          <h2 class="error__title">{{ 'ERRORS.404' | translate }}</h2>
+          <p class="error__text">{{ 'ERRORS.404_TEXT' | translate }}</p>
+          <a
+            mat-raised-button
+            color="primary"
+            class="error__btn"
+            routerLink="/home"
+          >
+            {{ 'BTN.BACK_TO_HOME' | translate }}
+          </a>
+        </div>
+      </div>
+
+      <div class="col-12 col-md-6 order-0 order-md-1">
+        <div class="d-flex flex-column justify-content-center h-100">
+          <h1 class="error__number">500</h1>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

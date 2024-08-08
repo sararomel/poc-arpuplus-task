@@ -1,0 +1,12 @@
+{
+  "LABELS": {
+    "NAME": "Name",
+    "FIRST_NAME": "First Name",
+    "LAST_NAME": "Last Name",
+    "EMAIL": "Email",
+    "PHONE": "Phone",
+    "CV": "Attach CV",
+    "MESSAGE": "Message",
+    "POSITION": "Position"
+  }
+}

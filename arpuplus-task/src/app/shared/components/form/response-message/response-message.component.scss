@@ -1,0 +1,11 @@
+@import 'abstracts/colors';
+@import 'abstracts/typography';
+
+.message {
+  &__text {
+    @include font('headline', 30px, $fw-semiBold);
+    color: color('primary');
+    width: 70%;
+    text-align: center;
+  }
+}

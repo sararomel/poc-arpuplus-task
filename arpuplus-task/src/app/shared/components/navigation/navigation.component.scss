@@ -1,0 +1,22 @@
+@import 'abstracts/colors';
+@import 'abstracts/typography';
+
+.navigation {
+  display: flex;
+
+  &__item {
+    color: color('white');
+    padding-inline-end: 0.7rem;
+    position: relative;
+    @include font('body', 14px);
+
+    &--active {
+      color: color('primary');
+    }
+
+    &:not(.navigation__item--active)::after {
+      content: '<';
+      margin: 0 1rem;
+    }
+  }
+}

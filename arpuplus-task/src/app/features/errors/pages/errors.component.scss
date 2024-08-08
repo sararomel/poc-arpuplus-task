@@ -1,0 +1,20 @@
+@import 'abstracts';
+
+.error {
+  height: 100%;
+  &__title {
+    @include font('headline', 90px, $fw-bold);
+  }
+  &__number {
+    @include font('headline', 220px, $fw-bold);
+  }
+  &__text {
+    @include font('body', 50px, $fw-regular);
+    color: color('primary');
+  }
+  &__btn {
+    color: color('secondary');
+    width: 10rem;
+    height: 3rem;
+  }
+}

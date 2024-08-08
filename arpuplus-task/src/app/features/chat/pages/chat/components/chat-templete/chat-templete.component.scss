@@ -1,0 +1,29 @@
+:host {
+  display: block;
+}
+
+.containers {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+}
+
+.main-content {
+  display: flex;
+  flex: 1;
+}
+
+.chat-container {
+  background-image: url('/assets/imgs/master-image.png');
+  background-size: cover;
+  background-position: center;
+  height: 100vh; // Adjust as needed
+  display: flex;
+  flex-direction: column;
+
+  .chat-section {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+}

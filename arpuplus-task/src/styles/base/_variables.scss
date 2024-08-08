@@ -1,0 +1,21 @@
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+
+:root {
+  --cf-p: 4.4%; // container fluid padding
+  --c-p: 16.91%; // container padding
+  --cfc-p: calc(var(--c-p) - var(--cf-p)); // container fluid
+
+  @include media-breakpoint-down(md) {
+    --cf-p: 5%; // container fluid padding
+    --c-p: 5%; // container padding
+  }
+
+  @each $name, $value in $_fonts {
+    --font-#{$name}: #{$value};
+  }
+  @each $name, $value in $colors {
+    --color-#{$name}: #{$value};
+  }
+}
