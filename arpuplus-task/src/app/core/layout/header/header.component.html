@@ -1,27 +1,26 @@
 <div class="header app-container-fluid" #headerRef setRtl>
   <div class="d-flex justify-content-between align-items-center">
-    <div class="header__logo" routerLink="/home"></div>
+    <div class="header__logo" routerLink="/home">
+      <img src="../../../../assets/imgs/icons/logo.png" alt="logo img" />
+    </div>
     @if (largeScreen$ | async) {
-      <ul class="header__navs">
-        @for (nav of navs; track nav.name; let i = $index) {
-          <li class="header__nav-item">
-            <a
-              [class]="'header__nav-link' + ' ' + (nav.className || '')"
-              [routerLink]="nav.url"
-              routerLinkActive="header__nav-link--active"
-            >
-              {{ nav.name | translate }}
-            </a>
-          </li>
-        }
-        <li class="header__nav-item">
-          <a class="header__nav-link" (click)="onChangeLang()">
-            {{ 'MENU.LANG' | translate }}
-          </a>
-        </li>
-      </ul>
+    <ul class="header__navs">
+      @for (nav of navs; track nav.name; let i = $index) {
+      <li class="header__nav-item">
+        <a [class]="'header__nav-link' + ' ' + (nav.className || '')" [routerLink]="nav.url"
+          routerLinkActive="header__nav-link--active">
+          {{ nav.name | translate }}
+        </a>
+      </li>
+      }
+      <li class="header__nav-item">
+        <a class="header__nav-link" (click)="onChangeLang()">
+          {{ 'MENU.LANG' | translate }}
+        </a>
+      </li>
+    </ul>
     } @else {
-      <app-menu [navs]="navs"></app-menu>
+    <app-menu [navs]="navs"></app-menu>
     }
   </div>
 </div>

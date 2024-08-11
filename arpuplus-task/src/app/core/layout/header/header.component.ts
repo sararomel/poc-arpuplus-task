@@ -31,8 +31,7 @@ import { HeaderNavItem } from './models/header.models';
 })
 export class HeaderComponent
   extends BaseComponent
-  implements AfterViewInit, OnInit
-{
+  implements AfterViewInit, OnInit {
   rendererFactory = inject(RendererFactory2);
   translationService = inject(TranslationService);
   httpService = inject(HttpService);
@@ -47,8 +46,12 @@ export class HeaderComponent
   ngOnInit(): void {
     this.navs = [
       { name: 'MENU.HOME', url: '/home' },
-      { name: 'MENU.Chat', url: '/chat' },
-    ];
+      { name: 'Our Products', url: '' },
+      { name: 'Who we are', url: '' },
+      { name: 'Our partners', url: '' },
+      { name: 'Testimonials', url: '' },
+      { name: 'Pricing', url: '' },
+      { name: 'Contact us', url: '' },];
   }
   ngAfterViewInit(): void {
     this.renderer = this.rendererFactory.createRenderer(null, null);
