@@ -1,6 +1,7 @@
 @import 'abstracts/colors';
 @import 'abstracts/mixins';
 @import 'abstracts/typography';
+@import 'abstracts';
 
 :host {
   display: block;
@@ -28,24 +29,24 @@
 
   @include media-breakpoint-up(md) {
     position: relative;
-    // box-shadow: none;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
   background-color: color('white');
 
   &__logo {
     cursor: pointer;
-    width: 15rem;
+    width: 13rem;
 
     @include media-breakpoint-up(md) {
-      width: 55vw;
+      width: 10vw;
     }
   }
 
   &__navs {
     display: flex;
+    align-items: center;
   }
 
   &__nav-item {
@@ -56,17 +57,41 @@
   }
 
   &__nav-link {
-    color: color('secondary');
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    @include font('title', 16px);
-    text-transform: uppercase;
+    color: color('lightBlue');
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    @include font('display', 16px, $fw-regular);
+    text-transform: capitalize;
     transition: all 0.4s;
+    position: relative;
+    text-wrap: nowrap;
+
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0; // Position the line at the bottom of the link
+      left: 0;
+      width: 0; // Start with a width of 0
+      height: 2px; // Set the height of the line
+      background-color: color('primary'); // Set the color of the line
+      transition: width 0.4s ease; // Animate the width change
+    }
+
+    &:hover::after {
+      width: 70%; // Expand the width to full on hover
+      padding-left: 0.2rem;
+    }
 
     &:hover,
     &--active,
     &--contact {
-      color: color('white');
+      color: color('primary');
+      @include font('display', 16px, $fw-semiBold);
+      padding-left: 0.2rem;
     }
+
+    // &:hover::after{
+
+    // }
   }
 }

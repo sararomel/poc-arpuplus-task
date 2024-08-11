@@ -1,5 +1,5 @@
 <div class="header app-container-fluid" #headerRef setRtl>
-  <div class="d-flex justify-content-between align-items-center">
+  <div class="d-flex justify-content-between  align-items-center">
     <div class="header__logo" routerLink="/home">
       <img src="../../../../assets/imgs/icons/logo.png" alt="logo img" />
     </div>
@@ -13,14 +13,29 @@
         </a>
       </li>
       }
-      <li class="header__nav-item">
-        <a class="header__nav-link" (click)="onChangeLang()">
-          {{ 'MENU.LANG' | translate }}
+    </ul>
+    <ul class="header__navs">
+      <li class="header__nav-item" routerLink="/">
+        <app-button [buttonTitle]="'Book Demo'"></app-button>
+      </li>
+      <li class="header__nav-item ">
+        <a target="_blank" href="https://staging.cloudcom.me/login">
+          <app-button [buttonTitle]="'LogIn'" [isPrimary]="true"></app-button>
         </a>
       </li>
     </ul>
     } @else {
-    <app-menu [navs]="navs"></app-menu>
+    <!-- <app-menu [navs]="navs"></app-menu> -->
+    <ul class="header__navs">
+      <li class="header__nav-item ">
+        <app-button [buttonTitle]="'Book Demo'"></app-button>
+      </li>
+      <li class="header__nav-item">
+        <a target="_blank" href="https://staging.cloudcom.me/login">
+          <app-button [buttonTitle]="'LogIn'" [isPrimary]="true"></app-button>
+        </a>
+      </li>
+    </ul>
     }
   </div>
 </div>

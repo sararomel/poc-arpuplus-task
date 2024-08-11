@@ -1,0 +1,5 @@
+<button class="button-container" [ngClass]="isPrimary?' button-container__primary' : 'button-container__white'">
+    <!--If the button has any img or icon before text-->
+    <img [src]="imgSrc" *ngIf="imgSrc" alt="button icon" />
+    {{buttonTitle}}
+</button>

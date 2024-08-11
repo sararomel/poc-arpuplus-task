@@ -20,11 +20,12 @@ import { HttpService } from '../../services/http/http.service';
 import { TranslationService } from '../../services/translation/translation.service';
 import { MenuComponent } from '../menu/menu.component';
 import { HeaderNavItem } from './models/header.models';
+import { ButtonComponent } from "../../../shared/components/button/button.component";
 
 @Component({
   selector: 'app-header',
   standalone: true,
-  imports: [CommonModule, MenuComponent, TranslateModule, RouterLink],
+  imports: [CommonModule, MenuComponent, TranslateModule, RouterLink, ButtonComponent],
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss'],
   changeDetection: ChangeDetectionStrategy.Default,
@@ -38,7 +39,7 @@ export class HeaderComponent
   cdr = inject(ChangeDetectorRef);
 
   navs: HeaderNavItem[] = [];
-  largeScreen$ = mediaMin(getBreakpointValue('md'));
+  largeScreen$ = mediaMin(getBreakpointValue('lg'));
   renderer!: Renderer2;
   @ViewChild('headerRef') headerRef!: ElementRef;
   logo!: string;

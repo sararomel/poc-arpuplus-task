@@ -1,0 +1,40 @@
+@import 'abstracts/colors';
+@import 'abstracts/mixins';
+@import 'abstracts/typography';
+@import 'abstracts';
+
+:host {
+  display: block;
+}
+
+.button-container {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  @include font('display', 16px, $fw-semiBold);
+  border-radius: 7px;
+  border: 1px solid color('primary');
+  box-shadow: 0px 4px 4px 0px rgba(88, 88, 88, 0.24);
+  padding: 1rem 1.3rem;
+  text-wrap: nowrap;
+
+  &__white {
+    background-color: color('white');
+    color: color('primary');
+
+    &:hover {
+      background-color: color('primary');
+      color: color('white');
+    }
+  }
+
+  &__primary {
+    background-color: color('primary');
+    color: color('white');
+
+    &:hover {
+      background-color: color('white');
+      color: color('primary');
+    }
+  }
+}
