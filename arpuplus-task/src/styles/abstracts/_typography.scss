@@ -1,24 +1,26 @@
 @use 'sass:map';
 @import '../abstracts/functions';
 
+// src/styles/fonts.scss
+@import url('https://fonts.googleapis.com/css?family="Poppins"');
 $_fonts: (
-  'display-en': '"poppins-display-en", serif',
-  'display-ar': '"poppins-display-ar", sans-serif',
+  'display-en': '"Poppins", serif',
+  'display-ar': '"Poppins", sans-serif',
 
-  'headline-en': '"poppins-headline-en", sans-serif',
-  'headline-ar': '"poppins-headling-ar", sans-serif',
+  'headline-en': '"Poppins", sans-serif',
+  'headline-ar': '"Poppins", sans-serif',
 
-  'title-en': '"poppins-title-en", sans-serif',
-  'title-ar': '"poppins-title-ar", sans-serif',
+  'title-en': '"Poppins", sans-serif',
+  'title-ar': '"Poppins", sans-serif',
 
-  'body-en': '"poppins-body-en", sans-serif',
-  'body-ar': '"poppins-bofy-ar", sans-serif',
+  'body-en': '"Poppins", sans-serif',
+  'body-ar': '"Poppins", sans-serif',
 
-  'label-en': '"poppins-label-en", sans-serif',
-  'label-ar': '"poppins-label-ar", sans-serif',
+  'label-en': '"Poppins", sans-serif',
+  'label-ar': '"Poppins", sans-serif',
 
-  'placeholder-en': '"placeholder-ar", sans-serif',
-  'placeholder-ar': '"placeholder-ar", sans-serif',
+  'placeholder-en': '"Poppins", sans-serif',
+  'placeholder-ar': '"Poppins", sans-serif',
 );
 
 // Those variables are calculated and added in app.component based on current language
@@ -32,22 +34,8 @@ $fonts: (
 );
 
 // -------------------------------
-// src/styles/fonts.scss
 
-@font-face {
-  font-family: 'poppins-display-en';
-  src: url('../../assets/fonts/Poppins-Black.ttf') format('truetype');
-}
 
-@font-face {
-  font-family: 'poppins-headline-en';
-  src: url('../../assets/fonts/Poppins-Bold.ttf') format('truetype');
-}
-
-@font-face {
-  font-family: 'poppins-title-en';
-  src: url('../../assets/fonts/Poppins-Regular.ttf') format('truetype');
-}
 
 
 // Define other fonts similarly
