@@ -19,14 +19,19 @@
       height: 100%;
       cursor: pointer;
 
-      span {
-        // last use like this
-        // font-size: 12px;
-        // font-weight: 500;
-        // font-family: 'poppins'
-        // BUT THE NEW IS
+      a {
         @include font('headline', 12px, $fw-bold);
+
+        span {
+          // last use like this
+          // font-size: 12px;
+          // font-weight: 500;
+          // font-family: 'poppins'
+          // BUT THE NEW IS
+          @include font('headline', 12px, $fw-bold);
+        }
       }
+
 
       @media (max-width: 768px) {
         border-top-right-radius: 0;
@@ -85,6 +90,6 @@
 
   @media (max-width: 768px) {
     background-color: color('primary');
-    padding: 1rem ;
+    padding: 1rem;
   }
 }
