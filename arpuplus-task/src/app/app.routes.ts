@@ -18,14 +18,7 @@ export const routes: Routes = [
           import('./features/home/home.routes').then((m) => m.homeRoutes),
         data: { title: 'HOME' },
       },
-      {
-        path: 'chat',
-        loadChildren: () =>
-          import('./features/chat/chat.routes').then(
-            (m) => m.chatRoutes,
-          ),
-        data: { title: 'Chat' },
-      },
+     
     ],
   },
   { path: '**', redirectTo: '/errors/404' },

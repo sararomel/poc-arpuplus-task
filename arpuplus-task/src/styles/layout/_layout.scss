@@ -1,9 +1,9 @@
-.app-container-fluid {
+.agg-container-fluid {
   @extend .container-fluid;
   padding: 0 var(--cf-p);
 }
 
-.app-container {
+.agg-container {
   @extend .container-fluid;
   padding: 0 var(--c-p);
 }
@@ -21,65 +21,66 @@ html {
 }
 
 :root {
-  --app-fs-xs: 70%;
-  --app-fs-sm: 70%;
-  --app-fs-md: 75%;
-  --app-fs-lg: 80%;
-  --app-fs-xl: 90%;
-  --app-fs-xxl: 100%;
+  --agg-fs-xs: 70%;
+  --agg-fs-sm: 70%;
+  --agg-fs-md: 75%;
+  --agg-fs-lg: 80%;
+  --agg-fs-xl: 90%;
+  --agg-fs-xxl: 100%;
 }
 
 html {
-  font-size: var(--app-fs-xs); // smallest screen below sm to 0
+  font-size: var(--agg-fs-xs); // smallest screen below sm to 0
+
   @include media-breakpoint-up(sm) {
-    font-size: var(--app-fs-sm);
+    font-size: var(--agg-fs-sm);
   }
+
   @include media-breakpoint-up(md) {
-    font-size: var(--app-fs-md);
+    font-size: var(--agg-fs-md);
   }
+
   @include media-breakpoint-up(lg) {
-    font-size: var(--app-fs-lg);
+    font-size: var(--agg-fs-lg);
   }
+
   @include media-breakpoint-up(xl) {
-    font-size: var(--app-fs-xl);
+    font-size: var(--agg-fs-xl);
   }
+
   @include media-breakpoint-up(xxl) {
-    font-size: var(--app-fs-xxl);
+    font-size: var(--agg-fs-xxl);
   }
 }
 
 h1 {
   @include font('headline', 57px, $fw-bold);
-  color: color('primary');
-  text-transform: uppercase;
+  color: var(--surface-900);
 }
 
 h2 {
   @include font('headline', 30px, $fw-bold);
-  color: color('primary');
-  text-transform: uppercase;
+  color: var(--surface-900);
 }
 
 h3 {
   @include font('title', 20px);
-  color: color('primary');
-  text-transform: uppercase;
+  color: var(--surface-900);
 }
 
 h4 {
   @include font('title', 16px, $fw-regular);
-  // color: color('primary');
-  text-transform: uppercase;
+  color: var(--surface-900);
 }
 
 p,
 span {
   @include font('body', 14px);
-  color: color('white');
 }
 
 p {
   @include font('body', 14px);
+
   @include media-breakpoint-up(md) {
     @include font('body', 14px);
   }
@@ -93,12 +94,12 @@ p {
   --bs-body-bg: #{color('white')};
 }
 
-button {
-  cursor: pointer;
-  outline: none;
-  border: none;
-  background-color: transparent;
-}
+// button {
+//   cursor: pointer;
+//   outline: none;
+//   border: none;
+//   background-color: transparent;
+// }
 
 a,
 a:link,
@@ -126,12 +127,13 @@ html {
 }
 
 ::-webkit-scrollbar {
-  width: 8px;
+  width: 5px;
+  height: 5px;
 }
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background-color: color('secondary');
+  background-color: var(--surface-0);
 }
 
 /* Handle */
@@ -145,6 +147,50 @@ html {
   background-color: darken(color('primary'), 5%);
 }
 
+::-webkit-scrollbar-thumb:active {
+  background-color: darken(color('primary'), 10%);
+}
+
 .rtl {
   direction: rtl;
+}
+
+/* Override the default pagination button styles */
+.p-paginator .p-paginator-pages .p-paginator-page,
+.p-paginator .p-paginator-first,
+.p-paginator .p-paginator-prev,
+.p-paginator .p-paginator-next,
+.p-paginator .p-paginator-last {
+  border-radius: 8px;
+  /* Remove border radius to make buttons squared */
+  width: 30px;
+  /* Adjust width to your liking */
+  height: 30px;
+  /* Adjust height to your liking */
+  margin: 0 2px;
+  /* Adjust margin to control spacing between buttons */
+  padding: 0;
+}
+
+/* Optional: Style the active page button differently */
+.p-paginator .p-paginator-page.p-highlight {
+  background-color: color('primary');
+  /* Change to your desired active background color */
+  border-color: color('primary');
+  /* Change to your desired active border color */
+  color: #fff;
+  /* Change to your desired active text color */
+}
+/* Custom styling for paginator buttons */
+.p-paginator button {
+  margin: 0 5px;
+  padding: 5px 10px;
+  border-radius: 4px;
+  background-color: color('white');
+  color: color('primary');
+  border: none;
+}
+
+.p-paginator button:disabled {
+  background-color: #ccc;
 }

@@ -1,5 +1,5 @@
 import { CommonModule } from '@angular/common';
-import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { ChangeDetectionStrategy, Component, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-button',
@@ -13,4 +13,8 @@ export class ButtonComponent {
   @Input() isPrimary: boolean = false;
   @Input() imgSrc!: string;
   @Input() buttonTitle: string = '';
+  // @Output() actionClicked
+  actionClick():void{
+
+  }
 }

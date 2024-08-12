@@ -1,6 +1,6 @@
-@import 'vendors/material';
-@import 'base';
-@import 'vendors/vendors';
+@import 'abstracts/colors';
+@import 'abstracts/typography';
+@import 'vendors';
 @import 'abstracts';
-@import 'layout/forms';
-@import 'layout/layout';
+@import 'base';
+@import 'layout';

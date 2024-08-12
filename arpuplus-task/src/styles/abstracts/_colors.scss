@@ -1,5 +1,6 @@
 @use 'sass:map';
 
+
 $colors: (
   'primary': #1A019D,
   'secondary': #bfac8c,
@@ -9,6 +10,7 @@ $colors: (
   'red': #a42424,
   'lightBlue': #535B87,
 );
+
 
 @function color($color) {
   @if not map.has-key($colors, $color) {
