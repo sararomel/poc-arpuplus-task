@@ -1,5 +1,5 @@
-<div class="app-container">
-  <p-table [value]="data" [paginator]="true" [rows]="10" [responsiveLayout]="'scroll'">
+<div class="app-container my-5">
+  <!-- <p-table [value]="data" [paginator]="true" [rows]="10" [responsiveLayout]="'scroll'">
     <ng-template pTemplate="header">
       <tr>
         <th>Id</th>
@@ -16,6 +16,54 @@
         <td>{{ item.phone }}</td>
       </tr>
     </ng-template>
-  </p-table>
+  </p-table> -->
+  <form [formGroup]="parentForm" (ngSubmit)="onSubmit()">
+    <!-- Use the InputTextComponent for the dynamic input field -->
+    <div class="row">
+      <div class=" col-md-5 col-12">
+
+        <app-input-text [parentForm]="parentForm" controlName="dynamicInput" label="Dynamic Input">
+        </app-input-text>
+      </div>
+      <div class=" col-md-5 col-12">
+
+        <app-input-number [parentForm]="parentForm" controlName="dynamicInputnumber" label="Dynamic Input for number">
+        </app-input-number>
+      </div>
+      <div class=" col-md-5 col-12">
+
+        <app-input-datetime [parentForm]="parentForm" controlName="dynamicInputdatetime" label="Select Date"
+          type="date">
+        </app-input-datetime>
+      </div>
+      <div class=" col-md-5 col-12">
+
+        <app-input-select [parentForm]="parentForm" controlName="dropdownField" label="Select Option"
+          [options]="dropdownOptions">
+        </app-input-select>
+
+      </div>
+      <div class=" col-md-5 col-12">
+        <app-input-select [parentForm]="parentForm" controlName="dropdownFieldmultiple" label="Select Option"
+          [options]="dropdownOptions" [multiple]="true">
+        </app-input-select>
+
+      </div>
+      <div class=" col-md-8 col-12">
+        <app-input-checkbox [parentForm]="parentForm" controlName="checkboxField" label="Accept Terms">
+        </app-input-checkbox>
+
+      </div>
+      <div class=" col-md-5 col-12">
+        <app-input-radio-button [parentForm]="parentForm" controlName="radioField" label="Select Option"
+          [options]="radioOptions">
+        </app-input-radio-button>
+
+
+      </div>
+    </div>
+
+    <app-button [isDisabled]="parentForm.invalid" [buttonTitle]="'Submit'"></app-button>
+  </form>
 
 </div>

@@ -1,0 +1,34 @@
+<div [formGroup]="parentForm" class="form w-100">
+    <div>
+        <label [for]="controlName" class="label-text d-flex align-items-center">{{ label }}
+            @if(control && hasRequiredValidator(control)){
+            <p class="required-asterisk mb-0">*</p>
+            }
+
+        </label>
+    </div>
+    <div class="form__text-space w-100">
+        <input pInputText [id]="controlName" [formControlName]="controlName" type="text" class="w-100" />
+    </div>
+
+    <!-- Error Handling -->
+    @if (control?.invalid && control?.touched) {
+    <div>
+        @if (control?.errors?.['required']) {
+        <small class="errors-message">
+            This field is required.
+        </small>
+        }
+        @if (control?.errors?.['minlength']) {
+        <small class="errors-message">
+            Minimum {{miniMumValue}} characters required.
+        </small>
+        }
+        @if (control?.errors?.['maxlength']) {
+        <small class="errors-message">
+            Maxmum {{maxMumValue}} characters required.
+        </small>
+        }
+    </div>
+    }
+</div>

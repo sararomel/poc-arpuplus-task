@@ -5,7 +5,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { FormErrorDirective } from '../form/form-error.directive';
 import { MatFormFieldDirective } from '../form/form-field.directive';
-import { MatFileInputComponent } from '../form/mat-file-input/mat-file-input.component';
+import { MatFileInputComponent } from '../form/inputs/mat-file-input/mat-file-input.component';
 
 export const formModules = [
   MatFormFieldModule,

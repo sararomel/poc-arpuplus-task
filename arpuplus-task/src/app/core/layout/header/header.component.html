@@ -4,7 +4,7 @@
       <img src="../../../../assets/imgs/icons/logo.png" alt="logo img" />
     </div>
     @if (largeScreen$ | async) {
-    <ul class="header__navs">
+    <ul class="header__navs mb-0">
       @for (nav of navs; track nav.name; let i = $index) {
       <li class="header__nav-item">
         <a [class]="'header__nav-link' + ' ' + (nav.className || '')" [routerLink]="nav.url"
@@ -14,7 +14,7 @@
       </li>
       }
     </ul>
-    <ul class="header__navs">
+    <ul class="header__navs mb-0">
       <li class="header__nav-item" routerLink="/">
         <app-button [buttonTitle]="'Book Demo'"></app-button>
       </li>
@@ -26,7 +26,7 @@
     </ul>
     } @else {
     <!-- <app-menu [navs]="navs"></app-menu> -->
-    <ul class="header__navs">
+    <ul class="header__navs mb-0">
       <li class="header__nav-item ">
         <app-button [buttonTitle]="'Book Demo'"></app-button>
       </li>

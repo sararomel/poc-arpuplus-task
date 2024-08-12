@@ -26,6 +26,8 @@
       background-color: color('primary');
       color: color('white');
     }
+
+   
   }
 
   &__primary {
@@ -36,5 +38,13 @@
       background-color: color('white');
       color: color('primary');
     }
+
+   
+  }
+
+  &:disabled {
+    opacity: 0.3;
+    pointer-events: none; // Prevent hover effects
+cursor: help;
   }
 }

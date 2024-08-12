@@ -19,6 +19,14 @@ import { GetValueOfKeyPipe } from '../../../../../../shared/pipes/get-value-of-k
 import { IgnoreValuesPipe } from '../../../../../../shared/pipes/ignore-values.pipe';
 import { RenameValuesPipe } from '../../../../../../shared/pipes/rename-value.pipe';
 import { HomeService } from '../../../../services/home.service';
+import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
+import { InputTextComponent } from '../../../../../../shared/components/form/inputs/input-text/input-text.component';
+import { ButtonComponent } from '../../../../../../shared/components/button/button.component';
+import { InputNumberComponent } from '../../../../../../shared/components/form/inputs/input-number/input-number.component';
+import { InputDatetimeComponent } from "../../../../../../shared/components/form/inputs/input-datetime/input-datetime.component";
+import { InputSelectComponent } from "../../../../../../shared/components/form/inputs/input-select/input-select.component";
+import { InputRadioButtonComponent } from "../../../../../../shared/components/form/inputs/input-radio-button/input-radio-button.component";
+import { InputCheckboxComponent } from "../../../../../../shared/components/form/inputs/input-checkbox/input-checkbox.component";
 
 @Component({
   selector: 'app-home-header',
@@ -28,17 +36,36 @@ import { HomeService } from '../../../../services/home.service';
     CommonModule,
     TableModule,
     ButtonModule,
-  ],
+    InputTextComponent,
+    ReactiveFormsModule,
+    ButtonComponent,
+    InputNumberComponent,
+    InputDatetimeComponent,
+    InputSelectComponent,
+    InputRadioButtonComponent,
+    InputCheckboxComponent
+],
   templateUrl: './home-header.component.html',
   styleUrls: ['./home-header.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush,
   providers: [HomeService]
 
 })
-export class HomeHeaderComponent  {
+export class HomeHeaderComponent {
   data: any[] = [];
-
-  constructor() {
+  parentForm!: FormGroup;
+  dropdownOptions = [
+    { label: 'Option 1', value: 1 },
+    { label: 'Option 2', value: 2 },
+    { label: 'Option 3', value: 3 }
+  ];
+  radioOptions = [
+    { label: 'Option 1', value: 1 },
+    { label: 'Option 2', value: 2 },
+    { label: 'Option 3', value: 3 }
+  ];
+  
+  constructor(private fb: FormBuilder) {
     this.data = [
       { id: 1, name: 'John Doe', email: 'john.doe@example.com', phone: '123-456-7890' },
       { id: 2, name: 'Jane Smith', email: 'jane.smith@example.com', phone: '987-654-3210' },
@@ -53,5 +80,24 @@ export class HomeHeaderComponent  {
       { id: 11, name: 'Laura Moore', email: 'laura.moore@example.com', phone: '123-789-4560' },
       { id: 12, name: 'Andrew Jackson', email: 'andrew.jackson@example.com', phone: '456-123-7890' }
     ];
+  }
+
+
+  ngOnInit() {
+    this.parentForm = this.fb.group({
+      dynamicInput: ['', [Validators.required, Validators.minLength(3)]],
+      dynamicInputnumber: ['', [Validators.required, Validators.minLength(3)]],
+      dynamicInputdatetime: ['', [Validators.required]],
+      dropdownField: ['', [Validators.required]],
+      dropdownFieldmultiple: ['', [Validators.required]],
+      radioField: ['', [Validators.required]],
+      checkboxField: ['', [Validators.required]],
+    });
+  }
+
+  onSubmit() {
+    if (this.parentForm.valid) {
+      console.log('Form Submitted', this.parentForm.value);
+    }
   }
 }
