@@ -27,6 +27,7 @@ import { InputDatetimeComponent } from "../../../../../../shared/components/form
 import { InputSelectComponent } from "../../../../../../shared/components/form/inputs/input-select/input-select.component";
 import { InputRadioButtonComponent } from "../../../../../../shared/components/form/inputs/input-radio-button/input-radio-button.component";
 import { InputCheckboxComponent } from "../../../../../../shared/components/form/inputs/input-checkbox/input-checkbox.component";
+import { SegmantsFormComponent } from "../segmants-forms/segmants-form/segmants-form.component";
 
 @Component({
   selector: 'app-home-header',
@@ -43,7 +44,8 @@ import { InputCheckboxComponent } from "../../../../../../shared/components/form
     InputDatetimeComponent,
     InputSelectComponent,
     InputRadioButtonComponent,
-    InputCheckboxComponent
+    InputCheckboxComponent,
+    SegmantsFormComponent
 ],
   templateUrl: './home-header.component.html',
   styleUrls: ['./home-header.component.scss'],

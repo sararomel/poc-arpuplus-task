@@ -1,0 +1,21 @@
+<form [formGroup]="basicInfoGroup" class="form-section">
+    <div class="row align-items-end justify-content-between">
+        <div class=" col-md-4 col-12">
+            <app-input-text [parentForm]="basicInfoGroup" controlName="Name" label="Write a segment name">
+            </app-input-text>
+        </div>
+
+        <div class="col-md-4 col-12">
+            <app-input-select [parentForm]="basicInfoGroup" controlName="ApplicationId" label="Choose Application"
+                [options]="dropdownOptions">
+            </app-input-select>
+
+        </div>
+
+        <div class="col-md-4 col-12">
+            <app-input-checkbox [parentForm]="basicInfoGroup" controlName="IsDraft" label="Active">
+            </app-input-checkbox>
+        </div>
+
+    </div>
+</form>

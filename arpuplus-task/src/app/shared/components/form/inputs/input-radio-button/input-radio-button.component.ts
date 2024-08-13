@@ -21,7 +21,7 @@ export class InputRadioButtonComponent implements OnInit {
   @Output() valueChange = new EventEmitter<any>(); // EventEmitter for value changes
   
   get control(): AbstractControl | null {
-    return this.parentForm.get(this.controlName);
+    return this.parentForm?.get(this.controlName);
   }
   ngOnInit(): void {
     // Subscribe to the value changes of the control

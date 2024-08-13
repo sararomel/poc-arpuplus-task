@@ -1,0 +1,9 @@
+<form [formGroup]="userFormGroup" class="form-section">
+    <div class="row align-items-end justify-content-between">
+        <div class="col-md-6 col-12">
+            <app-input-select [parentForm]="userFormGroup" controlName="VisitorTypeIds" label="Choose Users"
+                [multiple]="true" [options]="dropdownOptions">
+            </app-input-select>
+        </div>
+    </div>
+</form>

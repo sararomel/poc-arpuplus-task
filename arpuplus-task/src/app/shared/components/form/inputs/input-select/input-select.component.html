@@ -11,11 +11,11 @@
 
         @if(multiple){
         <p-multiSelect [id]="controlName" [formControlName]="controlName" [options]="options" optionLabel="label"
-            [placeholder]="label" class="w-100">
+            [placeholder]="label" class="w-100" (onChange)="onValueChanged($event)">
         </p-multiSelect>
         }@else{
         <p-dropdown [id]="controlName" [formControlName]="controlName" [options]="options" optionLabel="label"
-            [placeholder]="label" class="w-100">
+            (onChange)="onValueChanged($event)" [placeholder]="label" class="w-100">
         </p-dropdown>
         }
 

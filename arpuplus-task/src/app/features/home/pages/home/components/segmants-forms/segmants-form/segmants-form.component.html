@@ -1,0 +1,8 @@
+<div class="app-container-fluid">
+    <form class="form-body" [formGroup]="segmentsForm">
+        <app-basic-informatio-segmants-form [groupName]="'basicInfo'"></app-basic-informatio-segmants-form>
+        <app-users-segmants-form [groupName]="'users'"></app-users-segmants-form>
+        <app-technology-segmants-form [groupName]="'technology'"></app-technology-segmants-form>
+        <app-user-attribute-segments-form [groupName]="'magicUserAttributes'" [userFormArrayName]="'magicUserAttributes'"></app-user-attribute-segments-form>
+    </form>
+</div>

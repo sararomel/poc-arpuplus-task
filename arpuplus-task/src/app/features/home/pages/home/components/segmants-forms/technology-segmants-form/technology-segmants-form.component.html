@@ -1,0 +1,14 @@
+<form [formGroup]="techFormGroup" class="form-section">
+    <div class="row align-items-end ">
+        <div class="col-md-4 col-12">
+            <app-input-select [parentForm]="techFormGroup" controlName="DeviceType" label="Choose Device type"
+                [multiple]="true" [options]="dropdownOptions">
+            </app-input-select>
+        </div>
+        <div class="col-md-4 col-12">
+            <app-input-select [parentForm]="techFormGroup" controlName="BrowserType" label="Choose Browse type"
+                [multiple]="true" [options]="dropdownOptions">
+            </app-input-select>
+        </div>
+    </div>
+</form>

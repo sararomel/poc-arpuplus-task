@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
 import { FormGroup, ReactiveFormsModule, AbstractControl } from '@angular/forms';
+import { ButtonModule } from 'primeng/button';
 
 import { CalendarModule } from 'primeng/calendar';
 
@@ -7,7 +8,7 @@ import { CalendarModule } from 'primeng/calendar';
   selector: 'app-input-datetime',
   standalone: true,
   imports: [ReactiveFormsModule
-    , CalendarModule,
+    , CalendarModule, ButtonModule
   ],
   templateUrl: './input-datetime.component.html',
   styleUrl: './input-datetime.component.scss',
@@ -21,7 +22,7 @@ export class InputDatetimeComponent {
   @Input() miniMumValue?: number;
   @Input() maxMumValue?: number;
   get control(): AbstractControl | null {
-    return this.parentForm.get(this.controlName);
+    return this.parentForm?.get(this.controlName);
   }
 
 

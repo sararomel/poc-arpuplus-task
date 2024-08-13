@@ -1,0 +1,34 @@
+<form [formGroup]="userattrributeFormGroup" class="form-section">
+    <div class="row align-items-end" formArrayName="magicUserAttributes">
+        <div *ngFor="let attribute of userAttributes.controls; let i = index" class="col-md-4 col-12"
+            [formGroupName]="i">
+            <app-input-select [parentForm]="getuserAttributes(i)" controlName="attributeType"
+                label="Choose UserAttribute" [options]="attributeOptions"
+                (valueChange)="onAttributeTypeChange($event, i)">
+            </app-input-select>
+
+            <ng-container *ngIf="userAttributes?.at(i)?.get('operator')">
+                <app-input-select [parentForm]="getuserAttributes(i)" controlName="operator" label="Operator"
+                    [options]="operatorOptions">
+                </app-input-select>
+            </ng-container>
+
+            <ng-container *ngIf="userAttributes?.at(i)?.get('duration')">
+                <app-input-select [parentForm]="getuserAttributes(i)" controlName="duration" label="Duration"
+                    [options]="durationOptions">
+                </app-input-select>
+            </ng-container>
+
+            <ng-container *ngIf="userAttributes?.at(i)?.get('additionalControl')">
+                <app-input-text [parentForm]="getuserAttributes(i)" controlName="additionalControl"
+                    label="Dynamic Input">
+                </app-input-text>
+            </ng-container>
+            <ng-container *ngIf="userAttributes?.at(i)?.get('additionalControl2')">
+                <app-input-select [parentForm]="getuserAttributes(i)" controlName="additionalControl2"
+                    label="number value" [options]="operatorOptions">
+                </app-input-select>
+            </ng-container>
+        </div>
+    </div>
+</form>

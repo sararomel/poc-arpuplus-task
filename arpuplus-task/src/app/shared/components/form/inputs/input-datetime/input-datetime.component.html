@@ -8,12 +8,20 @@
         </label>
     </div>
     <div class="form__text-space w-100">
-        <p-calendar [id]="controlName" [formControlName]="controlName" [showTime]="true" [showButtonBar]="false"
-            [appendTo]="'body'" [placeholder]="label" class="w-100">
-        </p-calendar>
+        <p-calendar
+        [id]="controlName"
+        [formControlName]="controlName"
+        [showTime]="true"
+        [showButtonBar]="false"
+        [appendTo]="'body'"
+        [placeholder]="'dd/mm/yy'"
+        icon="pi pi-calendar"
+        [showIcon]="true" 
+        [iconDisplay]="'input'" 
+        class="w-100">
+    </p-calendar>
     </div>
 
-    <!-- Error Handling -->
     <!-- Error Handling -->
     @if (control?.invalid && control?.touched) {
     <div>

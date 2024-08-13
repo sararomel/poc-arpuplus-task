@@ -20,7 +20,7 @@ export class InputNumberComponent {
   @Input() miniMumValue!: string;
 
   get control(): AbstractControl | null {
-    return this.parentForm.get(this.controlName);
+    return this.parentForm?.get(this.controlName);
   }
 
   // Utility to check if the control has the required validator
