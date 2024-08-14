@@ -1,0 +1,12 @@
+:host {
+  display: block;
+}
+.mention-item {
+  padding: 5px;
+  border-bottom: 1px solid #ccc;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #f0f0f0;
+  }
+}

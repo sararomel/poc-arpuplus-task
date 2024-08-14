@@ -1,0 +1,15 @@
+<form [formGroup]="basicInfoGroup" class="">
+    <div class="row align-items-end justify-content-between">
+        <div class="col-md-6 col-12">
+            <app-input-select [parentForm]="basicInfoGroup" controlName="operator" label="Choose Duration"
+                [options]="dropdownOptions">
+            </app-input-select>
+        </div>
+        @if(basicInfoGroup.get('operator')?.value?.value){
+        <div class=" col-md-6 col-12">
+            <app-input-text [parentForm]="basicInfoGroup" controlName="textValue" label="Enter your text  value">
+            </app-input-text>
+        </div>
+        }
+    </div>
+</form>

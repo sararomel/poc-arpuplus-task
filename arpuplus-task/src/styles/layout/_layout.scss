@@ -19,6 +19,7 @@
 .form-body {
   box-shadow: 0 2px 6px 0 rgba(67, 89, 113, 0.12);
   padding: 2rem;
+  margin: 2rem 0;
 }
 
 body {
@@ -142,6 +143,8 @@ html {
 .errors-message {
   @include font('headline', 12px, $fw-semiBold);
   color: color('red');
+  position: absolute;
+  left: 0;
 }
 
 .required-asterisk {
@@ -235,6 +238,7 @@ html {
 
 .form {
   margin: 1.25rem 0;
+  position: relative;
 
   &__text-space {
     margin: 4px 0;

@@ -28,6 +28,7 @@ import { InputSelectComponent } from "../../../../../../shared/components/form/i
 import { InputRadioButtonComponent } from "../../../../../../shared/components/form/inputs/input-radio-button/input-radio-button.component";
 import { InputCheckboxComponent } from "../../../../../../shared/components/form/inputs/input-checkbox/input-checkbox.component";
 import { SegmantsFormComponent } from "../segmants-forms/segmants-form/segmants-form.component";
+import { EditorComponent } from "../editor/editor.component";
 
 @Component({
   selector: 'app-home-header',
@@ -45,7 +46,8 @@ import { SegmantsFormComponent } from "../segmants-forms/segmants-form/segmants-
     InputSelectComponent,
     InputRadioButtonComponent,
     InputCheckboxComponent,
-    SegmantsFormComponent
+    SegmantsFormComponent,
+    EditorComponent
 ],
   templateUrl: './home-header.component.html',
   styleUrls: ['./home-header.component.scss'],

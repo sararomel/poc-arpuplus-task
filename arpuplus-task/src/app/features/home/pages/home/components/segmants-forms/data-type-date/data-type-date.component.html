@@ -1,0 +1,26 @@
+<form [formGroup]="basicInfoGroup" class="">
+    <div class="row align-items-end justify-content-between">
+        <div class="col-md-8 col-12">
+            <app-input-select [parentForm]="basicInfoGroup" controlName="operator" label="Choose Operator"
+                [options]="dropdownOptions">
+            </app-input-select>
+        </div>
+        <!--In Default Case -->
+        @if(basicInfoGroup.get('operator')?.value?.value === 1){
+        <div class=" col-md-6 col-12">
+            <app-date-type-default [groupName]="'inAllCase'"></app-date-type-default>
+        </div>
+        }
+        @if(basicInfoGroup.get('operator')?.value?.value === 2){
+        <div class="col-12">
+            <app-date-type-between [groupName]="'inCaseWithBetween'"></app-date-type-between>
+        </div>
+        }
+        @if(basicInfoGroup.get('operator')?.value?.value === 3){
+        <div class="col-12">
+            <app-date-type-at [groupName]="'inCaseAt'"></app-date-type-at>
+        </div>
+        }
+
+    </div>
+</form>

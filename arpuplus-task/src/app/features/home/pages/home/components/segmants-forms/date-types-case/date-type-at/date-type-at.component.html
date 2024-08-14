@@ -1,0 +1,12 @@
+<form [formGroup]="basicInfoGroup">
+    <app-input-select [parentForm]="basicInfoGroup" controlName="duration" label="Choose duration"
+        [options]="dropdownOptionsDuration">
+    </app-input-select>
+    @if(basicInfoGroup.get('duration')?.value?.value === 1){
+    <app-input-datetime [parentForm]="getFormGroupName('durationDate')" controlName="dateValue"
+        label="Choose Date Value ">
+    </app-input-datetime>
+    }
+
+
+</form>

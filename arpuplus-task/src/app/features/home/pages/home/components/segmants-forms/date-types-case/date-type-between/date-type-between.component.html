@@ -1,0 +1,27 @@
+<form [formGroup]="basicInfoGroup">
+    <app-input-select [parentForm]="basicInfoGroup" controlName="duration" label="Choose duration"
+        [options]="dropdownOptionsDuration">
+    </app-input-select>
+    @if(basicInfoGroup.get('inCaseWithBetween')?.get('duration')?.value?.value === 1){
+    <app-input-datetime [parentForm]="getFormGroupName('durationWithDate')" controlName="dateValue2"
+        label="Choose Date Value1 ">
+    </app-input-datetime>
+    <app-input-datetime [parentForm]="getFormGroupName('durationWithDate')" controlName="dateValue2"
+        label="Choose Date Value 2">
+    </app-input-datetime>
+    }
+    @if(basicInfoGroup.get('inCaseWithBetween')?.get('duration')?.value?.value === 2
+    ||basicInfoGroup.get('inCaseWithBetween')?.get('duration')?.value?.value === 3){
+    <app-input-select [parentForm]="getFormGroupName('durationLastOrNext')" controlName="unit" label="Choose Unit"
+        [options]="dropdownOptionsUnits">
+    </app-input-select>
+    @if(basicInfoGroup.get('inCaseWithBetween')?.get('durationLastOrNext')?.get('unit')?.value?.valuea){
+    <app-input-number [parentForm]="getFormGroupName('durationLastOrNext')" controlName="numberValue1"
+        label="Choose Value 1">
+    </app-input-number>
+    <app-input-number [parentForm]="getFormGroupName('durationLastOrNext')" controlName="numberValue2"
+        label="Choose Value 2">
+    </app-input-number>
+    }
+    }
+</form>

@@ -1,34 +1,24 @@
 <form [formGroup]="userattrributeFormGroup" class="form-section">
     <div class="row align-items-end" formArrayName="magicUserAttributes">
-        <div *ngFor="let attribute of userAttributes.controls; let i = index" class="col-md-4 col-12"
+        <div *ngFor="let attribute of userAttributes.controls; let i = index" class="col-md-6 col-12"
             [formGroupName]="i">
             <app-input-select [parentForm]="getuserAttributes(i)" controlName="attributeType"
-                label="Choose UserAttribute" [options]="attributeOptions"
-                (valueChange)="onAttributeTypeChange($event, i)">
+                label="Choose UserAttribute" [options]="attributeOptions">
             </app-input-select>
-
-            <ng-container *ngIf="userAttributes?.at(i)?.get('operator')">
-                <app-input-select [parentForm]="getuserAttributes(i)" controlName="operator" label="Operator"
-                    [options]="operatorOptions">
-                </app-input-select>
-            </ng-container>
-
-            <ng-container *ngIf="userAttributes?.at(i)?.get('duration')">
-                <app-input-select [parentForm]="getuserAttributes(i)" controlName="duration" label="Duration"
-                    [options]="durationOptions">
-                </app-input-select>
-            </ng-container>
-
-            <ng-container *ngIf="userAttributes?.at(i)?.get('additionalControl')">
-                <app-input-text [parentForm]="getuserAttributes(i)" controlName="additionalControl"
-                    label="Dynamic Input">
-                </app-input-text>
-            </ng-container>
-            <ng-container *ngIf="userAttributes?.at(i)?.get('additionalControl2')">
-                <app-input-select [parentForm]="getuserAttributes(i)" controlName="additionalControl2"
-                    label="number value" [options]="operatorOptions">
-                </app-input-select>
-            </ng-container>
+            @if(getuserAttributes(i).get('attributeType')?.value?.value == 'string'){
+            <app-data-type-text [groupName]="'dataTypeText'" [arrayName]="'magicUserAttributes'"
+                [indexOfArray]="i"></app-data-type-text>
+            }
+            @if(getuserAttributes(i).get('attributeType')?.value?.value == 'number'){
+            <app-data-type-number [groupName]="'dataTypeNumber'" [arrayName]="'magicUserAttributes'"
+                [indexOfArray]="i"></app-data-type-number>
+            }
+    
+            @if(getuserAttributes(i).get('attributeType')?.value?.value == 'date'){
+            <app-data-type-date [groupName]="'dataTypeDate'" [arrayName]="'magicUserAttributes'"
+                [indexOfArray]="i"></app-data-type-date>
+            }
+    
         </div>
     </div>
 </form>

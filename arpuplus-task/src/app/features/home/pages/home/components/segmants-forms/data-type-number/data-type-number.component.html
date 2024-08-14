@@ -1,0 +1,29 @@
+<form [formGroup]="basicInfoGroup" class="">
+    <div class="row align-items-end justify-content-between">
+        <div class="col-md-6 col-12">
+            <app-input-select [parentForm]="basicInfoGroup" controlName="operator" label="Choose Operator"
+                [options]="dropdownOptions">
+            </app-input-select>
+        </div>
+        @if(basicInfoGroup.get('operator')?.value?.value === 1){
+        <div class=" col-md-6 col-12">
+            <app-input-number [parentForm]="getFormGroupName('inAllCaseWithoutBetween')" controlName="numberValue"
+                label="Choose Value ">
+            </app-input-number>
+        </div>
+        }
+        @if(basicInfoGroup.get('operator')?.value?.value === 2){
+        <div class=" col-md-6 col-12" formGroupName="inCaseBetween">
+            <app-input-number [parentForm]="getFormGroupName('inCaseBetween')" controlName="numberValue1"
+                label="Choose value 1">
+            </app-input-number>
+        </div>
+        <div class=" col-md-6 col-12" formGroupName="inCaseBetween">
+            <app-input-number [parentForm]="getFormGroupName('inCaseBetween')" controlName="numberValue2"
+                label="Choose value 2">
+            </app-input-number>
+        </div>
+        }
+
+    </div>
+</form>

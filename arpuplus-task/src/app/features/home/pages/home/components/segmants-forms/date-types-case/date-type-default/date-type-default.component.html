@@ -1,0 +1,21 @@
+<form [formGroup]="basicInfoGroup" class="">
+    <app-input-select [parentForm]="basicInfoGroup" controlName="duration" label="Choose duration"
+        [options]="dropdownOptionsDuration">
+    </app-input-select>
+    @if(basicInfoGroup.get('duration')?.value?.value === 1){
+    <app-input-datetime [parentForm]="getFormGroupName('durationWithDate')" controlName="dateValue"
+        label="Choose Date Value ">
+    </app-input-datetime>
+    }
+    @if(basicInfoGroup.get('duration')?.value?.value === 2
+    ||basicInfoGroup.get('duration')?.value?.value === 3){
+    <app-input-select [parentForm]="getFormGroupName('durationLastOrNext')" controlName="unit"
+        label="Choose Unit" [options]="dropdownOptionsUnits">
+    </app-input-select>
+    @if(basicInfoGroup.get('durationLastOrNext')?.value?.value){
+    <app-input-number [parentForm]="getFormGroupName('durationLastOrNext')" controlName="numberValue"
+        label="Choose Value">
+    </app-input-number>
+    }
+    }
+</form>
