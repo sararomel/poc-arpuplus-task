@@ -1,0 +1,36 @@
+<form [formGroup]="basicsInfoGroup" class="form-section">
+    <div class="row align-items-end justify-content-between">
+        <div class=" col-md-6 col-12">
+            <app-input-text [parentForm]="basicsInfoGroup" controlName="Name" label="Name">
+            </app-input-text>
+        </div>
+
+        <div class="col-md-6 col-12">
+            <app-input-select [parentForm]="basicsInfoGroup" controlName="ApplicationId" label="Choose Application"
+                [options]="dropdownOptions">
+            </app-input-select>
+
+        </div>
+        <div class="col-md-6 col-12">
+            <app-input-select [parentForm]="basicsInfoGroup" controlName="WSPPId"
+                label="WhatsApp Service Provider Configurations" [options]="dropdownOptions">
+            </app-input-select>
+
+        </div>
+        <div class="col-md-6 col-12">
+            <app-input-number [parentForm]="basicsInfoGroup" controlName="Sender" label="Sender">
+            </app-input-number>
+        </div>
+
+        <div class="col-md-6 col-12">
+            <app-input-select [parentForm]="basicsInfoGroup" controlName="LanguageType" label="language Type"
+                [options]="dropdownOptions">
+            </app-input-select>
+
+        </div>
+        <div class="col-md-6 col-12">
+            <app-input-text [parentForm]="basicsInfoGroup" controlName="Description" label="Description">
+            </app-input-text>
+        </div>
+    </div>
+</form>
