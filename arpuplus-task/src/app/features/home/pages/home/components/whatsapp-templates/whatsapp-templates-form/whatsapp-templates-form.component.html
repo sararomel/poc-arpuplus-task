@@ -1,6 +1,7 @@
 <div class="app-container-fluid">
-    <form class="form-body" [formGroup]="whatsappTemplatesForm">
+    <form class="form-body" [formGroup]="whatsappTemplatesForm" (ngSubmit)="onSubmit()">
         <app-application-info-whatsapp-templates-form
             [groupName]="'applicationInfo'"></app-application-info-whatsapp-templates-form>
+            <app-button [buttonTitle]="'submit'" [buttonType]="'submit'"></app-button>
     </form>
 </div>

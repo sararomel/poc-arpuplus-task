@@ -29,6 +29,7 @@ import { InputRadioButtonComponent } from "../../../../../../shared/components/f
 import { InputCheckboxComponent } from "../../../../../../shared/components/form/inputs/input-checkbox/input-checkbox.component";
 import { SegmantsFormComponent } from "../segmants-forms/segmants-form/segmants-form.component";
 import { EditorComponent } from "../editor/editor.component";
+import { WhatsappTemplatesFormComponent } from "../whatsapp-templates/whatsapp-templates-form/whatsapp-templates-form.component";
 
 @Component({
   selector: 'app-home-header',
@@ -47,7 +48,8 @@ import { EditorComponent } from "../editor/editor.component";
     InputRadioButtonComponent,
     InputCheckboxComponent,
     SegmantsFormComponent,
-    EditorComponent
+    EditorComponent,
+    WhatsappTemplatesFormComponent
 ],
   templateUrl: './home-header.component.html',
   styleUrls: ['./home-header.component.scss'],

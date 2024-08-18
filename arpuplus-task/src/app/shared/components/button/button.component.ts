@@ -13,6 +13,7 @@ export class ButtonComponent {
   @Input() isPrimary: boolean = false;
   @Input() imgSrc!: string;
   @Input() buttonTitle: string = '';
+  @Input() buttonType: string='button';
   @Input() isDisabled: boolean = false;
 
   @Output() actionClicked = new EventEmitter<void>();

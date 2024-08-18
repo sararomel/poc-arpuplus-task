@@ -12,19 +12,19 @@
     </div>
 
     <!-- Error Handling -->
-    @if (control?.invalid && control?.touched) {
+    @if (parentForm.get(controlName)?.invalid && parentForm.get(controlName)?.touched) {
     <div>
-        @if (control?.errors?.['required']) {
+        @if (parentForm.get(controlName)?.errors?.['required']) {
         <small class="errors-message">
-            This field is required.
+            {{label}} is required.
         </small>
         }
-        @if (control?.errors?.['minlength']) {
+        @if (parentForm.get(controlName)?.errors?.['minlength']) {
         <small class="errors-message">
             Minimum {{miniMumValue}} characters required.
         </small>
         }
-        @if (control?.errors?.['maxlength']) {
+        @if (parentForm.get(controlName)?.errors?.['maxlength']) {
         <small class="errors-message">
             Maxmum {{maxMumValue}} characters required.
         </small>

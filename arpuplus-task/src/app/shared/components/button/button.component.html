@@ -1,4 +1,4 @@
-<button class="button-container my-3" [ngClass]="isPrimary?' button-container__primary' : 'button-container__white'"
+<button class="button-container my-3" [ngClass]="isPrimary?' button-container__primary' : 'button-container__white'" [type]="buttonType"
     [disabled]="isDisabled" (click)="actionClick()">
     <!--If the button has any img or icon before text-->
     <img [src]="imgSrc" *ngIf="imgSrc" alt="button icon" />

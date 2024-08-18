@@ -1,25 +1,27 @@
-import { ChangeDetectionStrategy, Component } from '@angular/core';
+import { ChangeDetectionStrategy, ChangeDetectorRef, Component } from '@angular/core';
 import { FormBuilder, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { ApplicationInfoWhatsappTemplatesFormComponent } from "../application-info-whatsapp-templates-form/application-info-whatsapp-templates-form.component";
+import { ButtonComponent } from "../../../../../../../shared/components/button/button.component";
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-whatsapp-templates-form',
   standalone: true,
-  imports: [ReactiveFormsModule, ApplicationInfoWhatsappTemplatesFormComponent],
+  imports: [ReactiveFormsModule, ApplicationInfoWhatsappTemplatesFormComponent, ButtonComponent, CommonModule],
   templateUrl: './whatsapp-templates-form.component.html',
   styleUrl: './whatsapp-templates-form.component.scss',
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WhatsappTemplatesFormComponent {
   whatsappTemplatesForm!: FormGroup;
-  constructor(private fb: FormBuilder) { }
+  constructor(private fb: FormBuilder , private cd:ChangeDetectorRef) { }
   ngOnInit(): void {
     this.initForm()
   }
   initForm(): void {
     this.whatsappTemplatesForm = this.fb.group({
       applicationInfo: this.fb.group({
-        Id: [null, [Validators.required]],
+        Id: [null, []],
         Name: [null, [Validators.required]],
         ApplicationId: [null, [Validators.required]],
         WSPPId: [null, []],
@@ -34,7 +36,7 @@ export class WhatsappTemplatesFormComponent {
         FileUploadDocument: [null, []],
         FileUpload: [null, []],
         FileUploadVideo: [null, []],
-        MediaTitel:[null,[]]
+        MediaTitel: [null, []]
       }),
       templatesEditor: this.fb.group({
         EmailTemplateText: [null, []],
@@ -46,8 +48,17 @@ export class WhatsappTemplatesFormComponent {
   }
 
   onSubmit() {
+    console.log('Form Submission Attempted');
+    this.whatsappTemplatesForm.markAllAsTouched();
+    this.cd.detectChanges(); // Manually trigger change detection
+
+    // Debugging: Check which controls are touched
+    console.log('Is Name touched:', this.whatsappTemplatesForm.get('applicationInfo.Name')?.touched);
+
     if (this.whatsappTemplatesForm.valid) {
-      console.log('Form Submitted', this.whatsappTemplatesForm.value);
+      console.log('Form Submitted Successfully', this.whatsappTemplatesForm.value);
+    } else {
+      console.log('Form is invalid');
     }
   }
 }
