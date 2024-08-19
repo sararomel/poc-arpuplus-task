@@ -9,7 +9,7 @@ import { MultiSelectModule } from 'primeng/multiselect'; // Multiple select drop
   imports: [ReactiveFormsModule, DropdownModule, MultiSelectModule],
   templateUrl: './input-select.component.html',
   styleUrl: './input-select.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class InputSelectComponent implements OnInit {
   @Input() parentForm!: FormGroup;
@@ -28,12 +28,5 @@ export class InputSelectComponent implements OnInit {
   onValueChanged(event: DropdownChangeEvent) {
     this.valueChange.emit(event?.value)
   }
-  // Utility to check if the control has the required validator
-  hasRequiredValidator(control: AbstractControl): boolean | null {
-    if (control?.validator) {
-      const validatorFn = control.validator({} as AbstractControl);
-      return validatorFn && validatorFn.hasOwnProperty('required');
-    }
-    return false;
-  }
+  
 }

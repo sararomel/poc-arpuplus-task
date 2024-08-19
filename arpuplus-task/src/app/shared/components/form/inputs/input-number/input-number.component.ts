@@ -10,7 +10,7 @@ import { InputTextModule } from 'primeng/inputtext';
   imports: [InputTextModule, ReactiveFormsModule ,CommonModule],
   templateUrl: './input-number.component.html',
   styleUrl: './input-number.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class InputNumberComponent {
   @Input() parentForm!: FormGroup;
@@ -23,12 +23,5 @@ export class InputNumberComponent {
     return this.parentForm?.get(this.controlName);
   }
 
-  // Utility to check if the control has the required validator
-  hasRequiredValidator(control: AbstractControl): boolean | null {
-    if (control?.validator) {
-      const validatorFn = control.validator({} as AbstractControl);
-      return validatorFn && validatorFn.hasOwnProperty('required');
-    }
-    return false;
-  }
+  
 }

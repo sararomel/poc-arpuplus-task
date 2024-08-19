@@ -43,6 +43,7 @@ export class SegmantsFormComponent implements OnInit {
   onSubmit() {
     if (this.segmentsForm.valid) {
       console.log('Form Submitted', this.segmentsForm.value);
+      
     }
   }
 }

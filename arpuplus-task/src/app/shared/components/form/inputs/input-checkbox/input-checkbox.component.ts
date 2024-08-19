@@ -7,7 +7,7 @@ import { CheckboxModule } from 'primeng/checkbox';
   imports: [CheckboxModule, ReactiveFormsModule],
   templateUrl: './input-checkbox.component.html',
   styleUrl: './input-checkbox.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class InputCheckboxComponent implements OnInit {
   @Input() parentForm!: FormGroup;

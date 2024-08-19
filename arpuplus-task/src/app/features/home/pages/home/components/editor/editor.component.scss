@@ -1,6 +1,7 @@
 :host {
   display: block;
 }
+
 .mention-item {
   padding: 5px;
   border-bottom: 1px solid #ccc;
@@ -9,4 +10,34 @@
   &:hover {
     background-color: #f0f0f0;
   }
+}
+
+.editor-container {
+  position: relative;
+}
+
+.mention-dropdown {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #ccc;
+  z-index: 1000;
+  max-height: 150px;
+  overflow-y: auto;
+  width: auto;
+  top: 30%;
+}
+
+.mention-dropdown ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.mention-dropdown li {
+  padding: 8px;
+  cursor: pointer;
+}
+
+.mention-dropdown li:hover {
+  background-color: #eee;
 }

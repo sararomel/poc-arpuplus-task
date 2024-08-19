@@ -12,7 +12,7 @@ import { CalendarModule } from 'primeng/calendar';
   ],
   templateUrl: './input-datetime.component.html',
   styleUrl: './input-datetime.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class InputDatetimeComponent {
   @Input() parentForm!: FormGroup;
@@ -27,12 +27,5 @@ export class InputDatetimeComponent {
 
 
 
-  // Utility to check if the control has the required validator
-  hasRequiredValidator(control: AbstractControl): boolean | null {
-    if (control?.validator) {
-      const validatorFn = control.validator({} as AbstractControl);
-      return validatorFn && validatorFn.hasOwnProperty('required');
-    }
-    return false;
-  }
+ 
 }

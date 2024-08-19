@@ -2,7 +2,7 @@
     <div>
         <label [for]="controlName" class="label-text d-flex align-items-center">
             {{ label }}
-            @if(control && hasRequiredValidator(control)){
+            @if(control && parentForm.get(controlName)?.errors?.['required']){
             <span class="required-asterisk mb-0">*</span>
             }
         </label>

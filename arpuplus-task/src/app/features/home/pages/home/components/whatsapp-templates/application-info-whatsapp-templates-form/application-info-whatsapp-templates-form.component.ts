@@ -10,7 +10,7 @@ import { InputNumberComponent } from "../../../../../../../shared/components/for
   imports: [ReactiveFormsModule, InputTextComponent, InputSelectComponent, InputNumberComponent],
   templateUrl: './application-info-whatsapp-templates-form.component.html',
   styleUrl: './application-info-whatsapp-templates-form.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ApplicationInfoWhatsappTemplatesFormComponent implements OnInit {
   basicsInfoGroup!: FormGroup;

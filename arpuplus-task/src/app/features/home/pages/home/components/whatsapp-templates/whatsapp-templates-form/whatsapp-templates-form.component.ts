@@ -10,7 +10,7 @@ import { CommonModule } from '@angular/common';
   imports: [ReactiveFormsModule, ApplicationInfoWhatsappTemplatesFormComponent, ButtonComponent, CommonModule],
   templateUrl: './whatsapp-templates-form.component.html',
   styleUrl: './whatsapp-templates-form.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class WhatsappTemplatesFormComponent {
   whatsappTemplatesForm!: FormGroup;
@@ -50,7 +50,6 @@ export class WhatsappTemplatesFormComponent {
   onSubmit() {
     console.log('Form Submission Attempted');
     this.whatsappTemplatesForm.markAllAsTouched();
-    this.cd.detectChanges(); // Manually trigger change detection
 
     // Debugging: Check which controls are touched
     console.log('Is Name touched:', this.whatsappTemplatesForm.get('applicationInfo.Name')?.touched);

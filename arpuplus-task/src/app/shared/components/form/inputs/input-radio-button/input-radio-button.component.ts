@@ -8,7 +8,7 @@ import { RadioButtonModule } from 'primeng/radiobutton';
   imports: [RadioButtonModule, ReactiveFormsModule , CommonModule],
   templateUrl: './input-radio-button.component.html',
   styleUrl: './input-radio-button.component.scss',
-  changeDetection: ChangeDetectionStrategy.OnPush
+  // changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class InputRadioButtonComponent implements OnInit {
   @Input() parentForm!: FormGroup;
@@ -29,17 +29,6 @@ export class InputRadioButtonComponent implements OnInit {
       this.valueChange.emit(value); // Emit the new value
     });
   }
-  // Utility to check if the control has the required validator
-  hasRequiredValidator(control: AbstractControl): boolean | null {
-    if (control?.validator) {
-      const validatorFn = control.validator({} as AbstractControl);
-      return validatorFn && validatorFn.hasOwnProperty('required');
-    }
-    return false;
-  }
-   // Track function for ngFor
-   trackByFn(index: number, item: any) {
-    return item.value; // Track by unique value
-  }
+
 
 }
